@@ -1,0 +1,33 @@
+{
+  "name": "cesium-model-viewer",
+  "version": "0.0.1",
+  "description": "4D data CesiumJS viewer",
+  "main": "cesium-model-viewer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danwild/cesium-model-viewer.git"
+  },
+  "keywords": [
+    "CesiumJS",
+    "Cesium"
+  ],
+  "author": "danwild@y7mail.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/danwild/cesium-model-viewer/issues"
+  },
+  "homepage": "https://github.com/danwild/cesium-model-viewer#readme",
+  "dependencies": {
+    "cesium": "^1.16.0",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "compression": "^1.6.2",
+    "request": "^2.79.0",
+    "url": "^0.11.0",
+    "yargs": "^6.6.0"
+  }
+}
