@@ -19,6 +19,7 @@
             this.initViewer();
             this.initLayers();
             this.initSensors();
+            this.initModels();
         },
 
         initViewer: function(){
@@ -97,6 +98,47 @@
 
 
             }
+
+        },
+
+        initModels: function(){
+
+            // noaa bouy
+            var modelMatrix = Cesium.Transforms.eastNorthUpToFixedFrame(
+                Cesium.Cartesian3.fromDegrees(146, -11, 1100000));
+            var model = this.scene.primitives.add(Cesium.Model.fromGltf({
+                url : '/models/BGLTF/station_44018.bgltf',
+                modelMatrix : modelMatrix,
+                scale : 15000
+            }));
+
+            // topo model
+            //var modelMatrix = Cesium.Transforms.eastNorthUpToFixedFrame(
+            //    Cesium.Cartesian3.fromDegrees(-14, 128, 0));
+            //var model = this.scene.primitives.add(Cesium.Model.fromGltf({
+            //    url : '/models/BGLTF/Yass_Topo_6.bgltf',
+            //    modelMatrix : modelMatrix,
+            //    scale : 100
+            //}));
+
+
+            var url = '/models/BGLTF/Yass_Topo_6.bgltf';
+            var position = Cesium.Cartesian3.fromDegrees(128, -22, 100);
+            var heading = Cesium.Math.toRadians(180);
+            var pitch = 0;
+            var roll = 40;
+            var orientation = Cesium.Transforms.headingPitchRollQuaternion(position, heading, pitch, roll);
+
+            var entity = this.viewer.entities.add({
+                name: url,
+                position: position,
+                orientation: orientation,
+                model: {
+                    uri: url,
+                    minimumPixelSize: 128,
+                    scale : 100
+                }
+            });
 
         }
     };
