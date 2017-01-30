@@ -39,7 +39,6 @@
 
         initLayers: function(){
 
-            this.layerFiles.reverse();
             for(var i = 0; i < this.layerFiles.length; i++){
                 var height = i * 200000;
                 this.addLayer(height, this.layerFiles[i]);
